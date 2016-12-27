@@ -1,5 +1,10 @@
 [{
 	"Name": "",
 	"Image": "",
-	"Rating": ""
+	"Rating": "",
+	"Category":"",
+	"Quantity":"",
+	"Ingredients":"",
+	"MadeBy":""
+
 }]
