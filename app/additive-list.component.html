@@ -1,7 +1,8 @@
 <h1>Top Additivies</h1>
 <table>
     <tbody>
-       <tr mvdb-additive-short *ngFor="let additive of additivies" [additive]="additive">         
+       <tr mvdb-additive-short *ngFor="let additive of additivies" 
+        (click)="onSelect(additive)" [additive]="additive">         
        </tr>
      </tbody>
 </table>  

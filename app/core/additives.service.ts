@@ -1,5 +1,5 @@
 import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, URLSearchParams } from '@angular/http';
 import { FoodAdditive } from './additive.model';
 import { Observable }     from 'rxjs/Observable';
 
@@ -12,7 +12,14 @@ export class AdditiveService {
                     .map(this.extractData)
                     .catch(this.handleError);
   }
-
+  getAdditiveById(id: string) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('Id', id);
+    return this.http.get(this.heroesUrl,{
+          search : params
+       }).map(this.extractData)
+      .catch(this.handleError);
+  }
   private extractData(res: Response) {
     let body = res.json();
     console.log(body);

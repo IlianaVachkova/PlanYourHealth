@@ -1,4 +1,5 @@
 export class FoodAdditive{
+    Id:string;
     Name: string;
     Rating: number;
     Category: string;
@@ -7,8 +8,8 @@ export class FoodAdditive{
     Purpose: string;
     MadeBy: string;
     Image:string;
-    
-    constructor(name: string, 
+
+    constructor(id:string, name: string, 
     image: string, 
     rating: number,
 	category: string,
@@ -16,6 +17,7 @@ export class FoodAdditive{
     ingredients:string[],
 	purpose:string,
 	madeBy:string){
+        this.Id = id;
         this.Name = name;
         this.Image = image;
         this.Rating = rating;
