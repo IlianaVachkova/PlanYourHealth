@@ -10,6 +10,7 @@ import { AdditiveListComponent } from './additive-list.component';
 import { AdditiveShortComponent } from './additive-short.component';
 import { HomeComponent} from './home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
       path:'user/login',
       component: LoginComponent
   },
+  {
+      path:'user/register',
+      component: RegisterComponent
+  },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -45,7 +50,8 @@ const appRoutes: Routes = [
         AdditiveDetailComponent,
         PageNotFoundComponent,
         HomeComponent,
-        LoginComponent
+        LoginComponent,
+        RegisterComponent
         ],
     imports: [RouterModule.forRoot(appRoutes),BrowserModule, HttpModule, FormsModule ],
     providers:[ AdditiveService, AuthenticationService, UserService ],
