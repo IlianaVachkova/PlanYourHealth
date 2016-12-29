@@ -16,17 +16,17 @@ export class AdditiveService {
     return this.http.get(this.additivesUrl)
       .map(this.extractData)
       .toPromise()    
-      .then(ad=>ad.find(a=>a.Id == id))
+      .then(ad => ad.find(a=>a.Id == id))
       .catch(this.handleError);
   }
-  
-  addAdditive (id: string, name : string, image : string, category: string, quantity : string, ingredients: string, purpose: string, madeBy: string):
+  //this only works with server TODO:server side
+  addAdditive (id: number, name : string, image : string, category: string, quantity : string, ingredients: string, purpose: string, madeBy: string) :
    Observable<FoodAdditive> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.additivesUrl, { id, name, image, category, quantity, ingredients,purpose, madeBy }, options)
-                    .map(this.extractData)
+    return this.http.post(this.additivesUrl, { id, name, image, category, quantity, ingredients, purpose, madeBy }, options)
+                    .map(res=> res.json())
                     .catch(this.handleError);
   }
 

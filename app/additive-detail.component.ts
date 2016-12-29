@@ -18,9 +18,10 @@ export class AdditiveDetailComponent{
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => this.service.getAdditiveById(params['id']))
-      .subscribe((additive: FoodAdditive) => this.additive = additive);
-      console.log(this.additive);
-  }
-
-  
+      .subscribe((add: FoodAdditive) => {
+          this.additive = add;
+          console.log(this.additive);
+        });
+   
+  }  
 }
