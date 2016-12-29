@@ -1,7 +1,7 @@
 import { Component, Input , OnInit} from '@angular/core';
-import { FoodAdditive } from './core/additive.model';
+import { FoodAdditive } from '../core/models/additive.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { AdditiveService }  from './core/additives.service';
+import { AdditiveService }  from '../core/services/additives.service';
 
 @Component({
     selector: 'mvdb-additive-add',

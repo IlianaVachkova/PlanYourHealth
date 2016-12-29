@@ -1,6 +1,6 @@
 import { Injectable }     from '@angular/core';
 import { Http, Response, URLSearchParams, Headers, RequestOptions  } from '@angular/http';
-import { FoodAdditive } from './additive.model';
+import { FoodAdditive } from '../models/additive.model';
 import { Observable }     from 'rxjs/Observable';
 
 @Injectable()

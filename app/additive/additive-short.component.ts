@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FoodAdditive } from './core/additive.model';
+import { FoodAdditive } from '../core/models/additive.model';
 
 @Component({
     selector: '[mvdb-additive-short]',

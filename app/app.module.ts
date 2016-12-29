@@ -4,16 +4,13 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SortPipe } from './pipes/SortPipe';
-import { AdditiveService } from './core/additives.service';
-import { AdditiveDetailComponent} from './additive-detail.component';
-import { AdditiveListComponent } from './additive-list.component';
-import { AdditiveShortComponent } from './additive-short.component';
+import { AdditiveService } from './core/services/additives.service';
+import { AdditiveDetailComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
 import { HomeComponent} from './home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AdditiveAddComponent } from './additive-add.component'
 import { AuthenticationService } from '../app/core/services/authentication.service';
 import { UserService } from '../app/core/services/user.service';
 

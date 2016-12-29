@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdditiveService } from './core/additives.service';
-import { FoodAdditive } from './core/additive.model';
+import { AdditiveService } from '../core/services/additives.service';
+import { FoodAdditive } from '../core/models/additive.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
     selector: 'additive-list',
