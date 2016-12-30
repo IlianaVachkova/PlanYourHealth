@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 export class AdditiveListComponent implements OnInit  {
     additivies : FoodAdditive[];
+    private pageTitle: string;
     mode = 'Observable';
     errorMessage: string;
     selectedId: number;
@@ -17,7 +18,12 @@ export class AdditiveListComponent implements OnInit  {
         private additiveService: AdditiveService,
         private route: ActivatedRoute,
         private router: Router) {}
-    ngOnInit() { this.getAdditives(); }
+
+    ngOnInit() { 
+        this.pageTitle = 'The Food Additives List';
+        this.getAdditives(); 
+    }
+
     getAdditives(){
         this.additiveService.getAdditives()
                         .subscribe(
