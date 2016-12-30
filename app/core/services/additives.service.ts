@@ -20,13 +20,13 @@ export class AdditiveService {
   }
  
   //this only works with server TODO:server side
-  addAdditive (name : string, image : string, category: string, quantity : string, purpose: string, madeBy: string, ingredients: String[]) :
+  addAdditive (name : string, image : string, rating:number, category: string, quantity : number, purpose: string, madeBy: string, ingredients: String[]) :
    Observable<FoodAdditive> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-
-    return this.http.post(this.additivesUrl, { name, image, category, quantity, purpose, madeBy,ingredients }, options)
-                    .map(res=> res.json())
+//    //name, rating, category, quantity,  purpose, madeBy, image, ...ingredients
+    return this.http.post(this.additivesUrl, { name, rating, category, quantity, purpose, madeBy, image, ingredients }, options)
+                    .map(res=> res.json().result)
                     .catch(this.handleError);
   }
 

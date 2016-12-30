@@ -25,11 +25,13 @@ export class AdditiveAddComponent implements OnInit{
                             error => this.errorMessage = <any>error);
     }
     
-    addAdditive(name: string, image:string, rating:string, category: string, quantity: string, ingredients: string[], purpose: string, madeBy: string ) {
+    addAdditive(name: string, image:string, rating:string, category: string, quantity: string, ingredients: string, purpose: string, madeBy: string ) {
     console.log('click');
     if (!name) { return; }
     console.log(this.additivies);
-    this.additiveService.addAdditive(name, image, category, quantity, purpose, madeBy, ingredients)
+    let temparr = [];
+    temparr.push(ingredients);
+    this.additiveService.addAdditive(name, image, +rating, category, +quantity, purpose, madeBy, temparr)
                    .subscribe(
                      additive  => this.additivies.push(additive),
                      error =>  this.errorMessage = <any>error);
