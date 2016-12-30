@@ -33,6 +33,6 @@ export class AdditiveListComponent implements OnInit  {
     onSelect(additive: FoodAdditive) {
         console.log("I was clicked")
         console.log(additive);
-        this.router.navigate(['/additive', additive.Id]);
+        this.router.navigate(['/additive', additive._id]);
     }
 }

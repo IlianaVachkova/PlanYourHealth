@@ -1,30 +1,30 @@
 export class FoodAdditive{
-    Id:string;
-    Name: string;
-    Rating: number;
-    Category: string;
-    Quantity: number;
-    Ingredients: string[];
-    Purpose: string;
-    MadeBy: string;
-    Image:string;
+    _id:string;
+    name: string;
+    rating: number;
+    category: string;
+    quantity: number;
+    ingredients: string[];
+    purpose: string;
+    madeBy: string;
+    image:string;
 
     constructor(id:string, name: string, 
     image: string, 
     rating: number,
 	category: string,
 	quantity:number,
-    ingredients:string[],
 	purpose:string,
-	madeBy:string){
-        this.Id = id;
-        this.Name = name;
-        this.Image = image;
-        this.Rating = rating;
-        this.Category = category;
-        this.Quantity = quantity;
-        this.Ingredients = ingredients;
-        this.Purpose = purpose;
-        this.MadeBy = madeBy;
+	madeBy:string,
+    ingredients:string[]){
+        this._id = id;
+        this.name = name;
+        this.image = image;
+        this.rating = rating;
+        this.category = category;
+        this.quantity = quantity;
+        this.ingredients = ingredients;
+        this.purpose = purpose;
+        this.madeBy = madeBy;
     }
 }

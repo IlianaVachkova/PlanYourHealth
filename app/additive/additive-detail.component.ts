@@ -19,8 +19,7 @@ export class AdditiveDetailComponent{
     this.route.params
       .switchMap((params: Params) => this.service.getAdditiveById(params['id']))
       .subscribe((add: FoodAdditive) => {
-          this.additive = add;
-          console.log(this.additive);
+          this.additive = add;          
         });
    
   }  

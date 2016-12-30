@@ -5,16 +5,16 @@ import { FoodAdditive } from '../core/models/additive.model';
     selector: '[mvdb-additive-short]',
     templateUrl: `
         <td>
-            <img [src]="additive.Image" [alt]="additive.Name">
+            <img [src]="additive.image" [alt]="additive.name">
         </td>
         <td>
-            {{additive.Name}}
+            {{additive.name}}
         </td>
         <td>
-            {{additive.Purpose}}
+            {{additive.purpose}}
         </td>
         <td>
-            {{additive.Rating}}
+            {{additive.rating}}
         </td>
     `
 })
