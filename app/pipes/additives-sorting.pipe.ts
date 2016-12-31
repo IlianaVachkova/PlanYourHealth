@@ -14,16 +14,16 @@ export class AdditivesSortingPipe implements PipeTransform {
             switch (parameters[0]) {
                 case 'Name':
                     return parameters[1] === 'asc' ?
-                        a.Name.localeCompare(b.Name) :
-                        b.Name.localeCompare(a.Name);
+                        a.name.localeCompare(b.name) :
+                        b.name.localeCompare(a.name);
                 case 'Rating':
                     return parameters[1] === 'asc' ?
-                        +a.Rating - +b.Rating :
-                        +b.Rating - +a.Rating;
+                        +a.rating - +b.rating :
+                        +b.rating - +a.rating;
                 case 'Purpose':
                     return parameters[1] === 'asc' ?
-                        +a.Purpose - +b.Purpose :
-                        +b.Purpose - +a.Purpose;
+                        +a.purpose - +b.purpose :
+                        +b.purpose - +a.purpose;
             }
         });
     }

@@ -12,7 +12,7 @@ export class AdditivesFilterPipe implements PipeTransform {
         }
 
         return additives.filter(item =>
-            item.Name.toLocaleLowerCase()
+            item.name.toLocaleLowerCase()
             .indexOf(filterValue) > -1);
     }
 }

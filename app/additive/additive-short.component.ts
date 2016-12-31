@@ -1,24 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FoodAdditive } from '../core/models/additive.model';
 
 @Component({
     selector: '[mvdb-additive-short]',
-    templateUrl: `
-        <td>
-            <img [src]="additive.image" [alt]="additive.name">
-        </td>
-        <td>
-            {{additive.name}}
-        </td>
-        <td>
-            {{additive.purpose}}
-        </td>
-        <td>
-            {{additive.rating}}
-        </td>
-    `
+    templateUrl: './additive-short.component.html'
 })
 
-export class AdditiveShortComponent{
+export class AdditiveShortComponent implements OnInit {
    @Input() additive: FoodAdditive;
+
+   constructor() { }
+
+   ngOnInit() { }
+
+   get name() {
+       return this.additive.name;
+   }
+
+   get image() {
+       return this.additive.image;
+   }
+
+   get purpose() {
+       return this.additive.purpose;
+   }
+
+   get rating() {
+       return this.additive.rating;
+   }
 }

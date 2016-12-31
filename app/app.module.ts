@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SortPipe } from './pipes/SortPipe';
+import { AdditivesFilterPipe } from './pipes/additives-filter.pipe';
 import { AdditiveService } from './core/services/additives.service';
 import { AdditiveDetailComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
 import { HomeComponent} from './home.component';
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     declarations:[
         AppComponent,
         SortPipe,
+        AdditivesFilterPipe,
         AdditiveListComponent, 
         AdditiveShortComponent,
         AdditiveDetailComponent,
