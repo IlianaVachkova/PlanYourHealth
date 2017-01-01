@@ -10,8 +10,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 export class AdditiveListComponent implements OnInit  {
     additivies : FoodAdditive[];
+    private sortingProperties: string[];
     private pageTitle: string;
     private filterText: string;
+    private sortingProperty: string;
+    private direction: string;
     mode = 'Observable';
     errorMessage: string;
     selectedId: number;
@@ -23,6 +26,9 @@ export class AdditiveListComponent implements OnInit  {
 
     ngOnInit() { 
         this.pageTitle = 'The Food Additives List';
+        this.sortingProperties = ['Name', 'Rating', 'Purpose'];
+        this.sortingProperty = 'Rating';
+        this.direction = 'desc';
         this.getAdditives(); 
     }
 
@@ -41,5 +47,13 @@ export class AdditiveListComponent implements OnInit  {
 
     onInput(e: any) {
         this.filterText = e.target.value;
+    }
+
+    onSortChange(e: any) {
+        this.sortingProperty = e.target.value;
+    }
+
+    onDirectionChange(e: any) {
+        this.direction = e.target.value;
     }
 }
