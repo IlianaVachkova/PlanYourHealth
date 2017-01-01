@@ -24,7 +24,6 @@ export class AdditiveService {
    Observable<FoodAdditive> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-//    //name, rating, category, quantity,  purpose, madeBy, image, ...ingredients
     return this.http.post(this.additivesUrl, { name, rating, category, quantity, purpose, madeBy, image, ingredients }, options)
                     .map(res=> res.json().result)
                     .catch(this.handleError);

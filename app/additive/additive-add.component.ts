@@ -8,33 +8,25 @@ import { AdditiveService }  from '../core/services/additives.service';
     templateUrl: './additive-add.component.html'
 })
 
-export class AdditiveAddComponent implements OnInit{
-    additivies : FoodAdditive[];
+export class AdditiveAddComponent {
     mode = 'Observable';
     errorMessage: string;
 
     constructor (
-        private additiveService: AdditiveService) {}
-
-    ngOnInit() { this.getAdditives(); }
-
-    getAdditives(){
-        this.additiveService.getAdditives()
-                        .subscribe(
-                            additives => this.additivies = additives,
-                            error => this.errorMessage = <any>error);
-    }
+        private additiveService: AdditiveService,
+        private router: Router) {}
     
     addAdditive(name: string, image:string, rating:string, category: string, quantity: string, ingredients: string, purpose: string, madeBy: string ) {
     console.log('click');
     if (!name) { return; }
-    console.log(this.additivies);
-    let temparr = [];
+    let temparr : String[] = [];
     temparr.push(ingredients);
     this.additiveService.addAdditive(name, image, +rating, category, +quantity, purpose, madeBy, temparr)
-                   .subscribe(
-                     additive  => this.additivies.push(additive),
-                     error =>  this.errorMessage = <any>error);
+                   .subscribe(                     
+                         additive=>{                                               
+                             this.router.navigate(['additives']);              
+                        },
+                        error =>  this.errorMessage = <any>error);
     }
    
   
