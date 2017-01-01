@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SortPipe } from './pipes/SortPipe';
 import { AdditivesFilterPipe } from './pipes/additives-filter.pipe';
+import { AdditivesSortingPipe } from './pipes/additives-sorting.pipe';
 import { AdditiveService } from './core/services/additives.service';
 import { AdditiveDetailComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
 import { HomeComponent} from './home.component';
@@ -43,11 +44,13 @@ const appRoutes: Routes = [
   },
   { path: '**', component: PageNotFoundComponent }
 ];
+
 @NgModule({
     declarations:[
         AppComponent,
         SortPipe,
         AdditivesFilterPipe,
+        AdditivesSortingPipe,
         AdditiveListComponent, 
         AdditiveShortComponent,
         AdditiveDetailComponent,
