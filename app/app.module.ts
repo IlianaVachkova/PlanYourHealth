@@ -12,6 +12,7 @@ import { HomeComponent} from './home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationService } from '../app/core/services/authentication.service';
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        NavbarComponent,
         UserProfileComponent,
         AdditiveAddComponent
         ],
