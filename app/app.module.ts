@@ -23,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { CanActivateViaAuthGuard } from './can-activate';
+import { FooterComponent } from './footer/footer.component';
 
 import { CustomCounterComponent } from './custom-counter/custom-counter.component';
 
@@ -82,7 +83,8 @@ const appRoutes: Routes = [
         UserProfileComponent,
         AdditiveAddComponent,
         FavouriteListComponent,
-        CustomCounterComponent
+        CustomCounterComponent,
+        FooterComponent
         ],
     imports: [
         RouterModule.forRoot(appRoutes), 
