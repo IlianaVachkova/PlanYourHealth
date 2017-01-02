@@ -1,13 +1,12 @@
   <div *ngIf="additive">
-        <h1>{{additive.name}}</h1>
-        <img [src]="additive.image" [alt]="additive.name">        
-        {{additive.quantity}}         
-        {{additive.purpose}}
-        {{additive.madeBy}}        
-        {{additive.rating}}
-        {{additive.ingredients}}
-        {{additive.category}}
-
+        <h1>Name: {{additive.name}}</h1>
+        <div><h4>Image: <img [src]="additive.image" [alt]="additive.name"></h4></div>        
+        <div><h4>Quantity: {{additive.quantity}}</h4></div>         
+        <div><h4>Purpose: {{additive.purpose}}</h4></div>
+        <div><h4>Made By: {{additive.madeBy}}</h4></div>        
+        <div><h4>Rating: {{additive.rating}}</h4></div>
+        <div><h4>Ingredients: {{additive.ingredients}}</h4></div>
+        <div><h4>Category: {{additive.category}}</h4></div>
 <br>
 <h2><code>Rating = {{additive.rating}}</code></h2>
 <h3>Here you can change the rating: <custom-counter [(counter)]="additive.rating"></custom-counter></h3>
