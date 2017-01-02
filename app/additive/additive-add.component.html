@@ -1,6 +1,7 @@
 <div class="col-md-6 col-md-offset-3">
     <h2>Добави хранителна добавка:</h2>
-    <form name="form"(ngSubmit)="f.form.valid && addAdditive(name.value, image.value, rating.value, category.value, quantity.value, ingredients.value, madeBy.value, purpose.value)" 
+    <form name="form"(ngSubmit)="f.form.valid && addAdditive(name.value, image.value, rating.value, category.value, quantity.value, 
+    ingredients.value, purpose.value, madeBy.value)" 
      #f="ngForm" novalidate>
         <label>Additive name:</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
