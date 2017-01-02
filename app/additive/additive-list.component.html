@@ -35,7 +35,7 @@
             <th>Rating</th>
         </thead>
         <tbody>
-            <tr mvdb-additive-short *ngFor="let additive of (additivies | additivesFilter: filterText | additivesSort:[sortingProperty, direction])" 
+            <tr mvdb-additive-short *ngFor="let additive of (additives | additivesFilter: filterText | additivesSort:[sortingProperty, direction])" 
               (click)="onSelect(additive)" [additive]="additive">
             </tr>
         </tbody>

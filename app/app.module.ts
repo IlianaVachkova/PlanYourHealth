@@ -15,7 +15,7 @@ import { AdditiveService } from './core/services/additives.service';
 import { AdditivesFilterPipe } from './pipes/additives-filter.pipe';
 import { AdditivesSortingPipe } from './pipes/additives-sorting.pipe';
 
-import { AdditiveDetailComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
+import { AdditiveDetailComponent, FavouriteListComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent} from './home.component';
 import { LoginComponent } from './login/login.component';
@@ -33,6 +33,11 @@ const appRoutes: Routes = [
       path:'additives/add',
       component:AdditiveAddComponent,
       canActivate: [ CanActivateViaAuthGuard ]
+  },
+  {
+      path:'user/favourites',
+      component:FavouriteListComponent,
+      canActivate: [CanActivateViaAuthGuard]
   },
   {
       path:'home',
@@ -72,7 +77,8 @@ const appRoutes: Routes = [
         RegisterComponent,
         NavbarComponent,
         UserProfileComponent,
-        AdditiveAddComponent
+        AdditiveAddComponent,
+        FavouriteListComponent
         ],
     imports: [
         RouterModule.forRoot(appRoutes), 

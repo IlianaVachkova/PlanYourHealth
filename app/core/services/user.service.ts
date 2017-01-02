@@ -13,7 +13,7 @@ export class UserService {
     getById(id: number) {
         return this.http.get(apiUrl + '/user/' + id, this.createHeaderWithJwtToken()).map((response: Response) => response.json());
     }
-
+    
     create(user: User) {
         return this.http.post(apiUrl + '/user/register', user, this.createHeaderWithJwtToken()).map((response: Response) => response.json());
     }

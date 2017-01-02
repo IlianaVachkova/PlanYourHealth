@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
     templateUrl: './additive-list.component.html'
 })
 
-export class AdditiveListComponent implements OnInit  {
+export class FavouriteListComponent implements OnInit  {
     additives : FoodAdditive[];
     private sortingProperties: string[];
     private pageTitle: string;
@@ -33,10 +33,10 @@ export class AdditiveListComponent implements OnInit  {
     }
 
     getAdditives(){
-        this.additiveService.getAdditives()
-                        .subscribe(
-                            additives => this.additives = additives,
-                            error => this.errorMessage = <any>error);
+        var loggedUserInfo = JSON.parse(localStorage.getItem('currentUser')).user;
+        console.log(loggedUserInfo);
+        var arrayOfAdditives = loggedUserInfo.favouriteFoodAdditives as FoodAdditive[];
+        this.additives = arrayOfAdditives;
     }
 
     onSelect(additive: FoodAdditive) {
