@@ -8,4 +8,5 @@
         {{additive.ingredients}}
         {{additive.category}}
 </div>  
- <button class="btn btn-primary" routerLink="/additives">Върни се към добавки</button>
+ <button class="btn btn-primary" routerLink="/additives">BackToAdditives</button>
+ <button class="btn btn-primary" *ngIf=isLogged()  (click)="saveToFavorites(additive)">Save to favorites</button>

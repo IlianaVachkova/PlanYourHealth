@@ -11,6 +11,9 @@
             <li>
                 <a [routerLink]="['/contacts']">Contacts</a>
             </li>
+            <li *ngIf=isLogged()>
+                <a [routerLink]="['/additives']">My favourites</a>
+            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li *ngIf=!isLogged()>
