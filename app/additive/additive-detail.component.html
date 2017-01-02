@@ -7,6 +7,11 @@
         {{additive.rating}}
         {{additive.ingredients}}
         {{additive.category}}
+
+<br>
+<h2><code>Rating = {{additive.rating}}</code></h2>
+<h3>Here you can change the rating: <custom-counter [(counter)]="additive.rating"></custom-counter></h3>
+<hr>
 </div>  
  <button class="btn btn-primary" routerLink="/additives">BackToAdditives</button>
  <button class="btn btn-primary" *ngIf=isLogged()&&!isFavourited  (click)="saveToFavorites(additive)">Save to favourites</button>

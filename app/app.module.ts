@@ -23,6 +23,9 @@ import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { CanActivateViaAuthGuard } from './can-activate';
+
+import { CustomCounterComponent } from './custom-counter/custom-counter.component';
+
 const appRoutes: Routes = [
   { path: 'additive/:id',  component: AdditiveDetailComponent },
   {
@@ -78,7 +81,8 @@ const appRoutes: Routes = [
         NavbarComponent,
         UserProfileComponent,
         AdditiveAddComponent,
-        FavouriteListComponent
+        FavouriteListComponent,
+        CustomCounterComponent
         ],
     imports: [
         RouterModule.forRoot(appRoutes), 
@@ -91,7 +95,8 @@ const appRoutes: Routes = [
         AdditiveService, 
         AuthenticationService, 
         UserService,
-        CanActivateViaAuthGuard ],
+        CanActivateViaAuthGuard 
+        ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
