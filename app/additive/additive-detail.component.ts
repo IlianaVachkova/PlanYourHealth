@@ -15,12 +15,12 @@ export class AdditiveDetailComponent{
     private router: Router,
     private service: AdditiveService
   ) {}
+
   ngOnInit() {
     this.route.params
       .switchMap((params: Params) => this.service.getAdditiveById(params['id']))
       .subscribe((add: FoodAdditive) => {
           this.additive = add;          
         });
-   
   }  
 }

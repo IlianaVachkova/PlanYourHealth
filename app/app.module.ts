@@ -2,21 +2,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+
 import { AppComponent } from './app.component';
-import { SortPipe } from './pipes/SortPipe';
+import { UserService } from '../app/core/services/user.service';
+import { AuthenticationService } from '../app/core/services/authentication.service';
+import { AdditiveService } from './core/services/additives.service';
+
+
 import { AdditivesFilterPipe } from './pipes/additives-filter.pipe';
 import { AdditivesSortingPipe } from './pipes/additives-sorting.pipe';
-import { AdditiveService } from './core/services/additives.service';
+
 import { AdditiveDetailComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
+import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent} from './home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './not-found.component';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthenticationService } from '../app/core/services/authentication.service';
-import { UserService } from '../app/core/services/user.service';
 
 const appRoutes: Routes = [
   { path: 'additive/:id',  component: AdditiveDetailComponent },
@@ -54,7 +59,6 @@ const appRoutes: Routes = [
 @NgModule({
     declarations:[
         AppComponent,
-        SortPipe,
         AdditivesFilterPipe,
         AdditivesSortingPipe,
         AdditiveListComponent, 
@@ -68,8 +72,17 @@ const appRoutes: Routes = [
         UserProfileComponent,
         AdditiveAddComponent
         ],
-    imports: [RouterModule.forRoot(appRoutes),BrowserModule, HttpModule, FormsModule ],
-    providers:[ AdditiveService, AuthenticationService, UserService ],
+    imports: [
+        RouterModule.forRoot(appRoutes), 
+        BrowserModule, 
+        HttpModule, 
+        FormsModule, 
+        ToastModule 
+        ],
+    providers:[ 
+        AdditiveService, 
+        AuthenticationService, 
+        UserService ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
