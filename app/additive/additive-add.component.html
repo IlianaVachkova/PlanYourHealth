@@ -14,7 +14,7 @@
         </div>
         <label>Assign your rating</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !rating.valid }">
-            <input type="number" min="0" max="6" class="form-control" name="rating" #rating required />
+            <input type="number" min="0" max="6" value="0" step="1" class="form-control"  name="rating" #rating required />
             <div *ngIf="f.submitted && !rating.valid" class="help-block">Rating is required and should be between 0 and 6</div>
         </div>
          <label>Choose category</label>
@@ -24,7 +24,7 @@
         </div>
          <label>Quantity</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !quantity.valid }">
-            <input type="number" class="form-control" name="quantity" #quantity required/>
+            <input type="number" value="0" class="form-control" name="quantity" #quantity required/>
             <div *ngIf="f.submitted && !quantity.valid" class="help-block"> Quantity is required</div>
         </div>
         <label>Ingredients</label>
@@ -39,7 +39,7 @@
         </div>
         <label>Purpose</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !purpose.valid }">
-            <input type="text" class="form-control" name="purpose" #purpose required  pattern="weight loss|mass|strength"/>
+            <input type="text" class="form-control" name="purpose" #purpose required pattern="weight loss|mass|strength"/>
             <div *ngIf="f.submitted && !purpose.valid" class="help-block"> Purpose is required and should be either weight loss, mass or strength</div>
         </div>
         <div class="form-group">

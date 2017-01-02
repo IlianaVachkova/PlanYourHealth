@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PageNotFoundComponent } from './not-found.component';
-
+import { CanActivateViaAuthGuard } from './can-activate';
 const appRoutes: Routes = [
   { path: 'additive/:id',  component: AdditiveDetailComponent },
   {
@@ -31,7 +31,8 @@ const appRoutes: Routes = [
   },
   {
       path:'additives/add',
-      component:AdditiveAddComponent
+      component:AdditiveAddComponent,
+      canActivate: [ CanActivateViaAuthGuard ]
   },
   {
       path:'home',
@@ -82,7 +83,8 @@ const appRoutes: Routes = [
     providers:[ 
         AdditiveService, 
         AuthenticationService, 
-        UserService ],
+        UserService,
+        CanActivateViaAuthGuard ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
