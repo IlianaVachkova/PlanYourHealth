@@ -2,45 +2,45 @@
     <h2>Добави хранителна добавка:</h2>
     <form name="form"(ngSubmit)="f.form.valid && addAdditive(name.value, image.value, rating.value, category.value, quantity.value, ingredients.value, madeBy.value, purpose.value)" 
      #f="ngForm" novalidate>
-        <label>Име на добавката</label>
+        <label>Additive name:</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
             <input type="text" class="form-control" name="name" #name required/>
             <div *ngIf="f.submitted && !name.valid" class="help-block"> Name is required</div>
         </div>
-        <label>Картинка на добавката</label>
+        <label>Url to image</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !image.valid }">
             <input type="text" class="form-control" name="image" #image required />
             <div *ngIf="f.submitted && !image.valid" class="help-block">Image is required</div>
         </div>
-        <label>Рейтинг</label>
+        <label>Assign your rating</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !rating.valid }">
-            <input type="text" class="form-control" name="rating" #rating required />
-            <div *ngIf="f.submitted && !rating.valid" class="help-block">Rating is required</div>
+            <input type="number" min="0" max="6" class="form-control" name="rating" #rating required />
+            <div *ngIf="f.submitted && !rating.valid" class="help-block">Rating is required and should be between 0 and 6</div>
         </div>
-         <label>Категория</label>
+         <label>Choose category</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !category.valid }">
             <input type="text" class="form-control" name="category" #category required/>
             <div *ngIf="f.submitted && !category.valid" class="help-block"> Category is required</div>
         </div>
-         <label>Количество</label>
+         <label>Quantity</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !quantity.valid }">
-            <input type="text" class="form-control" name="quantity" #quantity required/>
+            <input type="number" class="form-control" name="quantity" #quantity required/>
             <div *ngIf="f.submitted && !quantity.valid" class="help-block"> Quantity is required</div>
         </div>
-        <label>Съставки</label>
+        <label>Ingredients</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !ingredients.valid }">
             <input type="text" class="form-control" name="ingredients" #ingredients required/>
             <div *ngIf="f.submitted && !ingredients.valid" class="help-block"> Ingredients is required</div>
         </div>
-        <label>Производител</label>
+        <label>Producer</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !madeBy.valid }">
             <input type="text" class="form-control" name="madeBy" #madeBy required/>
             <div *ngIf="f.submitted && !madeBy.valid" class="help-block"> Producer is required</div>
         </div>
-        <label>Цел</label>
+        <label>Purpose</label>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !purpose.valid }">
-            <input type="text" class="form-control" name="purpose" #purpose required/>
-            <div *ngIf="f.submitted && !purpose.valid" class="help-block"> Purpose is required</div>
+            <input type="text" class="form-control" name="purpose" #purpose required  pattern="weight loss|mass|strength"/>
+            <div *ngIf="f.submitted && !purpose.valid" class="help-block"> Purpose is required and should be either weight loss, mass or strength</div>
         </div>
         <div class="form-group">
             <button [disabled]="loading" class="btn btn-primary" >Добави</button>

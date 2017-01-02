@@ -17,7 +17,6 @@ export class AdditiveAddComponent {
         private router: Router) {}
     
     addAdditive(name: string, image:string, rating:string, category: string, quantity: string, ingredients: string, purpose: string, madeBy: string ) {
-    console.log('click');
     if (!name) { return; }
     let temparr : String[] = [];
     temparr.push(ingredients);
