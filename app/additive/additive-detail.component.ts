@@ -11,7 +11,9 @@ import { AuthenticationService } from '../core/services/authentication.service';
 
 export class AdditiveDetailComponent{
   additive: FoodAdditive;
-  isFavourited:boolean
+  isFavourited:boolean;
+  counterValue = 0;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -69,8 +71,8 @@ export class AdditiveDetailComponent{
       .switchMap((params: Params) => this.service.getAdditiveById(params['id']))
       .subscribe((add: FoodAdditive) => {
           this.additive = add;    
-          this.isFavourited = this.checkIfAdditiveIsInFavourties();      
+          this.isFavourited = this.checkIfAdditiveIsInFavourties();  
+          this.counterValue = this.additive.rating;
         });
-    
   }  
 }
