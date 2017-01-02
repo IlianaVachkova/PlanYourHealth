@@ -17,13 +17,14 @@ import { AdditivesSortingPipe } from './pipes/additives-sorting.pipe';
 
 import { AdditiveDetailComponent, FavouriteListComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent } from './additive';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent} from './home.component';
+import { HomeComponent} from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { CanActivateViaAuthGuard } from './can-activate';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contacts/contact.component';
 
 import { CustomCounterComponent } from './custom-counter/custom-counter.component';
 
@@ -46,6 +47,10 @@ const appRoutes: Routes = [
   {
       path:'home',
       component:HomeComponent
+  },
+  {
+      path:'contacts',
+      component:ContactComponent
   },
   {
       path:'user/login',
@@ -84,7 +89,8 @@ const appRoutes: Routes = [
         AdditiveAddComponent,
         FavouriteListComponent,
         CustomCounterComponent,
-        FooterComponent
+        FooterComponent,
+        ContactComponent
         ],
     imports: [
         RouterModule.forRoot(appRoutes), 
