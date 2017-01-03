@@ -46,24 +46,24 @@ The architecture is standard angular 2 architecture consisting of modules, compo
 
 ##Components
 Components are placed in seperate folders with their component html templates. There are 9 folders with component:
--additive folder - here are placed all components connected with food additive functionality: AdditiveDetailComponent, FavouriteListComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent
--contact folder - here is placed ContactComponent 
--customer-counter - here is placed CustomCounterComponent, which is used for rating the additives
--footer - here is playced bootstrapped FooterComponent
--home - HomeComponent, representing home page of the app
--login - LoginComponent it is component for loging the user
--navbar -  Here is placed the navigation menu of the app
--user-profile - Here is UserProfileComponent which navigates to adding of component
--app - here it is placed the main  AppComponent
+- additive folder - here are placed all components connected with food additive functionality: AdditiveDetailComponent, FavouriteListComponent, AdditiveListComponent,AdditiveShortComponent, AdditiveAddComponent
+- contact folder - here is placed ContactComponent 
+- customer-counter - here is placed CustomCounterComponent, which is used for rating the additives
+- footer - here is playced bootstrapped FooterComponent
+- home - HomeComponent, representing home page of the app
+- login - LoginComponent it is component for loging the user
+- navbar -  Here is placed the navigation menu of the app
+- user-profile - Here is UserProfileComponent which navigates to adding of component
+- app - here it is placed the main  AppComponent
 
 ##Module
 There is only one module the app.module - here are the routes and declaration of components and providers
 
 ##Services
 The services are placed in folder core/services. There are three services: 
--AdditiveService - it gets all additive, can get additve by id and add new addite to server 
--AuthenticationService - it takes care of login and logout functionality
--UserService - it can create user, and get it by id and it is used for registering new users
+- AdditiveService - it gets all additive, can get additve by id and add new addite to server 
+- AuthenticationService - it takes care of login and logout functionality
+- UserService - it can create user, and get it by id and it is used for registering new users
 
 
 # How to run
